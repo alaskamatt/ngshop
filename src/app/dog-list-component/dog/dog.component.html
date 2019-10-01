@@ -1,3 +1,10 @@
-<p>
-  dog works!
-</p>
+<div class="dogComponent">
+  <img src={{dog.thumbnail}}>
+  {{dog.name}}
+  <div class="dogButtons">
+    <button class="likeBtn" (click)="incrementCounter()">LIKE</button>
+    <div class="counter">{{counter}}</div>
+    <button class="favoritesBtn" (click)="toggleFavorite()">FAVORITE</button>
+    <div class="favorite" *ngIf="dog.favorite">&#10003;</div>
+  </div>
+</div>

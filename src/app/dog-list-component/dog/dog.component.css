@@ -1,0 +1,34 @@
+.dogComponent {
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    border: solid brown 2px;  
+    margin: 10px; 
+}
+
+img {
+    object-fit: scale-down;
+}
+
+.dogButtons {
+    display:flex;
+    justify-content: space-between;
+}
+
+.likeBtn {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.favoritesBtn {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.counter {
+    padding-left: 3px;
+    padding-right: 3px;
+    border: solid tan 2px;
+}

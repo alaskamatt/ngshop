@@ -9,11 +9,13 @@ import { Dog } from '../dog';
 })
 export class DogListComponentComponent implements OnInit {
 
-  dogs: Dog[]
+  dogs: Dog[];
+  favorites: boolean;
 
   constructor(private dogService:DogsServiceService) {
     dogService.import();
     this.dogs = this.getAll();
+    this.favorites = false;
   }
 
   
@@ -23,6 +25,14 @@ export class DogListComponentComponent implements OnInit {
 
   getAll() {
     return this.dogService.all();
+  }
+
+  showAll(){
+    this.favorites = false;
+  }
+
+  showFavorites() {
+    this.favorites = true;
   }
 
 }

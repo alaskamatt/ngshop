@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Dog } from 'src/app/dog';
 
 @Component({
   selector: 'app-dog',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DogComponent implements OnInit {
 
-  constructor() { }
+  @Input() dog: Dog;
+
+  counter: number;
+
+  constructor() {
+    this.counter = 0;
+     }
 
   ngOnInit() {
+  }
+
+  incrementCounter() {
+    this.counter += 1
+  }
+
+  toggleFavorite() {
+    this.dog.favorite = !this.dog.favorite;
   }
 
 }
