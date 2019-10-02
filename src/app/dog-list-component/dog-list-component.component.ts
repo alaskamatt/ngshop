@@ -13,8 +13,8 @@ export class DogListComponentComponent implements OnInit {
   favorites: boolean;
 
   constructor(private dogService:DogsServiceService) {
-    dogService.import();
-    this.dogs = this.getAll();
+    //dogService.import();
+    this.getAll();
     this.favorites = false;
   }
 
@@ -24,7 +24,7 @@ export class DogListComponentComponent implements OnInit {
   }
 
   getAll() {
-    return this.dogService.all();
+    this.dogService.all().subscribe(data => this.dogs = (data as Dog[]));
   }
 
   showAll(){

@@ -1,34 +1,46 @@
 .dogComponent {
     display:flex;
     flex-direction: column;
-    padding: 10px;
-    border: solid brown 2px;  
-    margin: 10px; 
+    border: solid navy 2px;  
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    background-color: navy;
+    color: whitesmoke;
 }
 
 img {
     object-fit: scale-down;
+    background-color: navy;
 }
 
 .dogButtons {
     display:flex;
     justify-content: space-between;
+    background-color: silver;
 }
+
+
 
 .likeBtn {
     display: flex;
     flex-grow: 1;
     text-align: center;
+    background-color: silver;
+
 }
 
 .favoritesBtn {
     display: flex;
     flex-grow: 1;
     text-align: center;
+    background-color: silver;
+
 }
 
 .counter {
     padding-left: 3px;
     padding-right: 3px;
-    border: solid tan 2px;
+    background-color:silver;
+    color: black;
+
 }

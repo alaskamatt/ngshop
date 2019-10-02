@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Dog } from './dog';
-// let jsonData = require('./dogdata.json');
+import { HttpClient } from '@angular/common/http';
 import jsonData from './dogdata.json'
-
+import config from '../assets/config.json'
 @Injectable({
   providedIn: 'root'
 })
 export class DogsServiceService {
   dogData: Dog[]
-  constructor() { 
+  constructor(private http: HttpClient) { 
     this.dogData = []
+  }
+
+  baseURL: string = 'https://ngshop-rest-api.herokuapp.com'
+
+  all() {
+    return this.http.get(this.baseURL + config.dogs)
   }
 
   import() {
@@ -27,9 +33,5 @@ export class DogsServiceService {
     }
 
     return null
-  }
-
-  all() {
-    return this.dogData
   }
 }

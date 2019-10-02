@@ -1,9 +1,14 @@
 <div class="dogList">
-  <button class="dogListButtons" (click)="showAll">Show All</button>
-  <button class="dogListButtons" (click)="showFavorites">Show Favorites</button>
-  <div class="dogrows">
-    <app-dog class="dogs" *ngFor='let dog of dogs' [dog]="dog">
-
-    </app-dog>
+  <button class="dogListButtons" (click)="showAll()">Show All</button>
+  <button class="dogListButtons" (click)="showFavorites()">Show Favorites</button>
+  <div class="dogrows" *ngIf="favorites">
+    <div *ngFor='let dog of dogs'>
+      <app-dog class="dogs" *ngIf="dog.favorite" [dog]="dog"></app-dog>
+    </div>
+  </div>
+  <div class="dogrows" *ngIf="!favorites">
+    <div *ngFor='let dog of dogs'>
+      <app-dog class="dogs" [dog]="dog"></app-dog>
+    </div>
   </div>
 </div>

@@ -1,9 +1,12 @@
-
-
 .dogrows {
     display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+.dogListButtons {
+    margin: 10px;
+    background-color: navy;
+    color: white;
+}
